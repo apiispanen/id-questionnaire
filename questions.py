@@ -4,6 +4,9 @@ import streamlit as st
 from dotenv import load_dotenv
 import os, base64
 import json
+import dotenv
+print(dotenv.__version__)
+
 load_dotenv()
 
 st.title("Prospect Evaluation Questionnaire")
