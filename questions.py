@@ -67,10 +67,10 @@ for question, weight in questions_and_weights.items():
 good_client_threshold = 50  # This is an example threshold
 great_client_threshold = 100  # This is an example threshold
 # Display the result
-if total_score >= good_client_threshold:
-    st.success("This client is good: YES")
-elif total_score >= great_client_threshold:
+if total_score >= great_client_threshold:
     st.success("This client is great: YES")
+elif total_score >= good_client_threshold:
+    st.success("This client is good: YES")
 else:
     st.error("This client is good: NO")
 st.divider()
