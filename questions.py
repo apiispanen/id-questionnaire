@@ -67,10 +67,12 @@ for question, weight in questions_and_weights.items():
 
 # Set a threshold for a "good" client
 good_client_threshold = 50  # This is an example threshold
-
+great_client_threshold = 100  # This is an example threshold
 # Display the result
 if total_score >= good_client_threshold:
     st.success("This client is good: YES")
+elif total_score >= great_client_threshold:
+    st.success("This client is great: YES")
 else:
     st.error("This client is good: NO")
 st.divider()
@@ -100,7 +102,7 @@ with st.container():
 
         system_prompt = {
             "role": "system",
-            "content": f"You are an AI assistant. You can ask me questions about the binary prospect evaluation questionnaire. The user who is taking the questionnaire can also ask questions. Their total score currently is: {total_score} out of {sum(questions_and_weights.values())} possible points. To be a good client you need a score of {good_client_threshold} or higher. Their current answers to each question (1 being True, 0 being False) and their weights are:\n\n {questions_and_weights}.\n\n When prompted, don't reveal the weights, but reveal what questions could be the best to improve the score."
+            "content": f"You are an AI assistant. You can ask me questions about the binary prospect evaluation questionnaire. The user who is taking the questionnaire can also ask questions. Their total score currently is: {total_score} out of {sum(questions_and_weights.values())} possible points. To be a good client you need a score of {good_client_threshold} or higher. To be a great client, you need a score of {great_client_threshold} or higher. Their current answers to each question (1 being True, 0 being False) and their weights are:\n\n {questions_and_weights}.\n\n When prompted, don't reveal the weights, but reveal what questions could be the best to improve the score."
         }
 
         st.session_state.messages.append(system_prompt)
