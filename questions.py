@@ -35,7 +35,6 @@ questions_and_weights = {
     "How do you address defensibility and differentiation?": 1,
     "How often do you address defensibility and differentiation?": 10,
     "Do you believe your organisation is optimally designed to deliver your strategy?": 3,
-    "Please elaborate on your answer.": 3,
     "Do you use analytics to measure the performance and delivery of KPIs?": 5
 }
 
